@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***** RESET :: START ******/
+html, body{
+height:100%;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	color:#fff;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/***** RESET :: START ******/
+
+
+/***** Common Classes :: START ******/
+/* @font-face {
+font-family:PT Sans Caption;
+ src: url('PTC55F.ttf');
+}
+@font-face {
+font-family:PT Sans;
+ src: url('PTS55F.ttf');
+} */
+@font-face {
+    font-family: 'robotoregular';
+    src: url('roboto-regular_0-webfont.eot');
+    src: url('roboto-regular_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('roboto-regular_0-webfont.woff') format('woff'),
+         url('roboto-regular_0-webfont.ttf') format('truetype'),
+         url('roboto-regular_0-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html, body {
+	height: 100%;/* The html and body elements cannot have any padding or margin. */
+	margin:0;
+	padding:0;
+}
+
+body.dashboard {
+	 background:#181818 url(../images/black_gradient.png) repeat-x center bottom;
+	font-size:14px;
+	font-family: 'robotoregular';
+	color:#fff; 
+	line-height:24px;
+	background-attachment:fixed;
+	/*background-size: cover; */
+}
+
+body.home, body.university {
+	 background:#000 url(../images/login_bg.png) no-repeat center top;
+	font-size:14px;
+	font-family: 'robotoregular';
+	color:#fff; 
+	line-height:24px;
+	background-attachment:fixed;
+	/* background-size: cover; */
+}
+body.employer {
+	 background:#000 url(../images/corporate_listing_bg.jpg) no-repeat center top;
+	font-size:14px;
+	font-family: 'robotoregular';
+	color:#2e2e2e;
+	line-height:24px;
+	background-attachment:fixed;
+	/* background-size: cover; */
+}
+body.student {
+	 background:#000 url(../images/student_bg.jpg) no-repeat center top;
+	font-size:14px;
+	font-family: 'robotoregular';
+	color:#2e2e2e;
+	line-height:24px;
+	background-attachment:fixed;
+	/* background-size: cover; */
+}
+
+img {
+	margin:0;
+	padding:0;
+	vertical-align: middle;
+	border: 0;
+}
+.float_left {
+	float:left;
+}
+.float_right {
+	float:right;
+}
+.clear {
+	clear:both;
+}
+.margin10_left {
+	margin-left:10px;
+}
+.margin5_top {
+	margin-top:5px;
+}
+.margin10_top {
+	margin-top:10px;
+}
+.margin10_right {
+	margin-right:10px;
+}
+.margin10_bottom {
+	margin-bottom:10px;
+}
+.margin20_left {
+	margin-left:20px;
+}
+.margin20_top {
+	margin-top:20px;
+}
+.margin20_right {
+	margin-right:20px !important;
+}
+.margin20_bottom {
+	margin-bottom:20px;
+}
+a {
+	color:#4ebbcd;
+	text-decoration:none;
+}
+a:hover {
+	color:#4ebbcd;
+	text-decoration:none;
+}
+a:visited {
+	color:#00aeef;
+	text-decoration:none;
+}
+a.active {
+	color:#00aeef;
+	text-decoration:none;
+}
+p a {
+	color:#00aeef;
+	text-decoration:none;
+}
+p a:hover {
+	color:#2e2e2e;
+	text-decoration:none;
+}
+p a:visited {
+	color:#00aeef;
+	text-decoration:none;
+}
+p a.active {
+	color:#00aeef;
+	text-decoration:none;
+}
+.small_font {
+	font-size:14px;
+}
+.font_italic {
+	font-style:italic;
+}
+.font_underline {
+	text-decoration:underline !important;
+}
+.grey_font {
+	color:#2e2e2e;
+}
+.blue_font {
+	color:#00aeef;
+}
+.orange_font {
+	color:#f55b5b;
+}
+.green_font {
+	color:#26c9ff;
+}
+.text_center {
+	text-align: center;
+}
+.boldtxt {
+	font-weight:bold;
+}
+/***** Common Classes :: START ******/
+
+/* Base Grid */
+#mid_wrap .onecolumns {
+	width: 300px;
+}
+#mid_wrap .twocolumns {
+	width: 460px;
+}
+#mid_wrap .threecolumns {
+	width: 520px;
+}
+#mid_wrap .fourcolumns {
+	width: 580px;
+}
+#mid_wrap .fivecolumns {
+	width: 640px;
+}
+
+::-webkit-input-placeholder {
+color:#b2b2b2;
+font-size:16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+::-moz-placeholder {
+color:#b2b2b2;
+font-size:16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+} /* firefox 19+ */
+:-ms-input-placeholder {
+color:#b2b2b2;
+font-size:16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+} /* ie */
+input:-moz-placeholder {
+color:#b2b2b2;
+font-size:16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+.placeholder {
+	color:#b2b2b2 !important;
+	font-size:16px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+form select option {
+	color: #080808;
+}
+form select option:first-child {
+	color: #fff;
+}
+#main_wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+     margin: 0 auto -94px;
+}
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.topmenu a{color:#ccc; border-bottom:1px solid #333; width:100%; display:block; float:none !important;}
+ .topmenu a:last-child{border-bottom:none;}
+.topmenu{box-shadow: #333 4px 1px 20px 2px inset;background: #45484d; /* Old browsers */
+background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
+background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+position:fixed; top:8%; display:none; border-radius:8px; -o-border-radius:8px; -webkit-border-radius:8px; right:0; padding:15px 25px;}
+
+.openmenu .submenu{margin:0; padding:0; position:absolute;bottom:116px;display:none; width:100%;}
+
+.openmenu .submenu li{background:#f45b5b;border-bottom:1px solid #000; width:100%;}

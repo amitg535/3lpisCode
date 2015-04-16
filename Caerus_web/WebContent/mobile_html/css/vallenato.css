@@ -1,0 +1,52 @@
+#accordion-container {
+}
+.accordion-header {
+	font-size:18px;
+	margin:20px 0 0 0;
+	padding:17px 10px;
+	/*border:1px solid #565656;*/
+	cursor:pointer;
+	color:#000;
+	border-bottom:1px solid #606060;
+	width:100%;
+	font-weight:normal;
+	text-transform:uppercase;
+
+}
+.active-header {
+	
+	background:#c8c8c8 url(../images/accordian-up.png) no-repeat 100% 50%;
+}
+.active-header:hover {
+	background:#c8c8c8 url(../images/accordian-up.png) ;
+	background-repeat: no-repeat;
+	background-position:100% 50%;
+}
+.inactive-header {
+	background:#c8c8c8 url(../images/accordian-down.png) ;
+	background-repeat: no-repeat;
+	background-position:100% 50%;
+}
+.inactive-header:hover {
+	background:#c8c8c8 url(../images/accordian-down.png) ;
+	background-repeat: no-repeat;
+	background-position:100% 50%;
+}
+.accordion-content {
+	display: none;
+	/*padding:17px 10px;*/
+	background:rgba(255, 255, 255, 0.1);
+	/*border: 1px solid #cccccc;
+	border-top: 0;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;*/
+	width:100% !important;
+
+}
+.accordion-content {padding:10px 5px;}
+@media only screen and (min-device-width : 320px) and (max-device-width
+	: 960px) and (orientation : portrait), @media only screen and (min-device-width : 320px) and (max-device-width
+	: 960px) and (orientation : landscape) {
+	.accordion-header{font-size:17px;}
+	}

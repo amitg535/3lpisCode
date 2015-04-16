@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, legend, caption, thead, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol, ul {
+	list-style: none;
+}
+body {
+	
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+.center_align {
+	text-align:center !important;
+}
+table th, td {
+}
+a.txtunderline {
+	color:#3399cc;
+	text-decoration:underline;
+}
+a.txtunderline:hover {
+	color:#4c4c4c;
+	text-decoration:underline;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	margin:0;
+	padding:0;
+}
+p, div {
+word-break: break-all; word-wrap: break-word;
+}
+@font-face {
+font-family:PT Sans Caption;
+ src: url('fonts/PTC55F.ttf');
+}
+@font-face {
+font-family:PT Sans;
+ src: url('fonts/PTS55F.ttf');
+}
+/*end of frame*/
+
+
+#main{
+	background: #DEDEDE url(images/login_bg.png) repeat-x left top;
+height: 768px;
+margin: 0;
+padding: 0;
+position: absolute;
+
+width: 100%;
+
+}
+.inner{
+	width:403px;	
+	margin:auto;
+	
+	margin-top:200px;
+	border:1px solid #fff;
+	border-radius:4px;
+}
+.inner .logindetails{
+	border:1px solid #c2c2c2;
+	border-radius:4px;height:214px;
+	
+}
+.inner .logindetails form  div{
+		margin:0 auto;
+}
+.logo{
+	margin-left: -45px;
+    margin-top: -60px;text-align:left;
+}
+.logindetails form{
+	margin-top:-5px;
+	line-height:26px;
+	text-align:center;		
+}
+.logindetails form h1{
+	padding-bottom:10px;	
+}
+.logindetails form input[type="text"], .logindetails form input[type="password"]{
+	width:90%;	
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	display:inline-block;
+	height:24px;
+	padding:4px 6px;
+	margin-bottom:10px;
+	font-size:14px;
+	line-height:20px;
+	color:#555;
+	vertical-align:middle;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px
+}
+input[type="text"], input[type="password"]{
+color:#d8d8d8;
+font-style:italic;
+}
+input[type="text"]:focus, input[type="password"]:focus{
+color:#000;
+font-style:normal;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	background-color:#fff;
+	border:1px solid #ccc;
+	/*-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+-webkit-transition:border linear .2s, box-shadow linear .2s;
+-moz-transition:border linear .2s, box-shadow linear .2s;
+-o-transition:border linear .2s, box-shadow linear .2s;
+transition:border linear .2s, box-shadow linear .2s
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	border-color:rgba(82, 168, 236, 0.8);
+	outline:0;
+	outline:thin dotted \9;
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)
+}
+
+.logindetails form input[type="button"], .logindetails form input[type="submit"]{
+	background:#f37124;
+	padding:14px 38px;
+	border-radius:4px;
+	-moz-box-shadow: 2px 2px 0px #000000;
+-webkit-box-shadow: 2px 2px 0px #000000;
+box-shadow: 2px 2px 0px #000000;
+border:none;	
+float:left;
+margin-left:15px;
+font-size:16px;
+color:#fff;
+overflow:visible;
+width:auto;
+}
+.logindetails form a{
+	text-align:left;
+	float:left;	
+	padding-left:10px;
+	padding-top:25px;
+	color:#00a1d6;
+	font-size:16px;
+}

@@ -1,0 +1,12 @@
+#.project
+.classpath
+.metadata/
+.settings/
+.svn/
+.gradle
+bin/
+!CaerusHybrid/bin
+build/
+.externalToolBuilders/
+tmp/
+target/

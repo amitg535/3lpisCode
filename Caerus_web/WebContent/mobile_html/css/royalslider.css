@@ -1,0 +1,417 @@
+/* v1.0.5 */
+/* Core RS CSS file. 95% of time you shouldn't change anything here. */
+
+
+/*check the class for thumb navigation*/
+.rsThumbsContainer {
+	width:100%;
+}
+#homeSlider .rsThumb {
+	margin-right:0px !important;
+}
+#homeSlider {
+	width: 100% !important;
+	
+}
+.savepersonal {
+	dispaly:none;
+}
+#homeSlider .rsThumbsHor {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin-bottom: 20px;
+	background: #f8f7f7;
+	border-bottom: 1px solid #cdcdcd;
+	color: #707070;
+	text-align: center;
+	line-height: 58px;
+	font-size: 14px;
+	border-right: 1px solid #909090;
+}
+.rsDefaultInv, .rsDefaultInv .rsOverflow, .rsDefaultInv .rsSlide, .rsDefaultInv .rsVideoFrameHolder, .rsDefaultInv .rsThumbs {
+/*background: #FFF;*/
+}
+.rsDefaultInv .rsThumb.rsNavSelected {
+	/*background: #dadada;*/
+	border-bottom: 5px solid #f37124;
+	color: #000;
+}
+#homeSlider > .rsContent {
+}
+.royalSlider > .rsContent h1, .royalSlider > .rsContent h2, .royalSlider > .rsContent img, .royalSlider > .rsContent .example-link {
+	display: none;
+}
+#homeSlider .rsThumb {
+	width: 28%;
+	height: 58px;
+	cursor: pointer;
+	border-right: 1px solid #ccc;
+}
+#homeSlider .rsTmb {
+	font-style: normal;
+	text-align: center;
+	font-size:14px;
+}
+#homeSlider .rsThumb:last-child {
+	border-right: none;
+}
+
+.personalinfo, .educationinfo, .resumeskills {
+	padding-top: 62px;
+	width:80%;
+	margin:0 auto;
+	height:100%;
+}
+.personalinfo .title, .educationinfo .title, .resumeskills .title {
+	border-bottom: #B1B2B2 dashed 1px;
+	padding: 0 0 10px 0;
+	font-weight: normal;
+	font-size: 18px;
+	margin-bottom: 40px;
+	color: #000;
+}
+.personalinfo .title span, .educationinfo .title span, .resumeskills .title span {
+	color: #f37124;
+}
+.details {
+}
+.details ul {
+	margin: 0;
+	padding: 0;
+	border: 1px solid #bcbebe;
+	border-radius: 4px;
+	float: left;
+	width: 100%;
+	background: #fff;
+}
+.details ul li:first-child {
+	border-top: none;
+}
+.details ul li:last-child {
+	border-bottom: none;
+}
+.details ul li {
+	list-style-type: none;
+	border-bottom: 1px solid #e4e4e4;
+	border-top: 1px solid #fff;
+	padding:10px;
+	color: #000;
+	float: left;
+	width: 100%;
+}
+.details ul li .label {
+	color: #7c7c7c;
+	font-weight: normal;
+	float: left;
+	width:29%;
+	background:none;
+	font-size:14px;
+	padding:10px 0 0 0;
+	margin-right:10px;
+	margin-bottom:10px;
+	white-space:normal;
+word-wrap: break-word;
+}
+.details ul li .labeldetails {
+	float: left;
+	padding:7px 0 0 0;
+	width:66%;
+}
+.details ul li .labeldetails1 {
+	float: left;
+	width:66%;
+}
+/*.labeldetails input[type="placeholder"] {
+
+	width: 100%;
+	padding: 5px;
+}*/
+form ul.form_wrap li {
+	margin:0;
+}
+
+.edit {
+	float: right;
+	margin-top: -30px;
+	background: #F37124;
+	border: 1px solid #F37124;
+	cursor: pointer;
+	font-size: 16px;
+	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
+	color: white;
+	-webkit-box-shadow: 0px 2px 0px 0px #535353;
+	box-shadow: 0px 2px 0px 0px #535353;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+.royalSlider {
+	position: relative;
+	direction: ltr;
+	top:0;
+	width: 100% !important;
+	height:600px;
+}
+.royalSlider > * {
+	float: left;
+}
+.rsWebkit3d .rsSlide {
+	-webkit-transform: translateZ(0);
+}
+.rsWebkit3d .rsSlide, .rsWebkit3d .rsContainer, .rsWebkit3d .rsThumbs, .rsWebkit3d .rsPreloader, .rsWebkit3d img, .rsWebkit3d .rsOverflow, .rsWebkit3d .rsBtnCenterer, .rsWebkit3d .rsAbsoluteEl, .rsWebkit3d .rsABlock, .rsWebkit3d .rsLink {
+	-webkit-backface-visibility: hidden;
+}
+.rsFade.rsWebkit3d .rsSlide, .rsFade.rsWebkit3d img, .rsFade.rsWebkit3d .rsContainer {
+	-webkit-transform: none;
+}
+.rsOverflow {
+	width:100% !important;
+	position: relative;
+	overflow: hidden;
+	top:44px;
+	float: left;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.rsVisibleNearbyWrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.rsVisibleNearbyWrap .rsOverflow {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.rsContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.rsArrow, .rsThumbsArrow {
+	cursor: pointer;
+}
+.rsThumb {
+	float: left;
+	position: relative;
+}
+.rsArrow, .rsNav, .rsThumbsArrow {
+	opacity: 1;
+	-webkit-transition:opacity 0.3s linear;
+	-moz-transition:opacity 0.3s linear;
+	-o-transition:opacity 0.3s linear;
+	transition:opacity 0.3s linear;
+}
+.rsHidden {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+	-moz-transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+	-o-transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+	transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+}
+.rsGCaption {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+/* Fullscreen options, very important ^^ */
+.royalSlider.rsFullscreen {
+	position: fixed !important;
+	/*height: auto !important;*/
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	z-index: 2147483647 !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+}
+.royalSlider .rsSlide.rsFakePreloader {
+	opacity: 1 !important;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	-o-transition:  0s;
+	transition:  0s;
+	display: none;
+}
+.rsSlide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.royalSlider.rsAutoHeight, .rsAutoHeight .rsSlide {
+	height: auto;
+}
+.rsContent {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.rsPreloader {
+	position:absolute;
+	z-index: 0;
+}
+.rsNav {
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.rsNavItem {
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0.25);
+}
+.rsThumbs {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	z-index: 22;
+}
+.rsTabs {
+	float: left;
+	background: none !important;
+}
+.rsTabs, .rsThumbs {
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.rsVideoContainer {
+	/*left: 0;
+	top: 0;
+	position: absolute;*/
+	/*width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	float: left;*/
+	width: auto;
+	height: auto;
+	line-height: 0;
+	position: relative;
+}
+.rsVideoFrameHolder {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #141414;
+	opacity: 0;
+ -webkit-transition: .3s;
+}
+.rsVideoFrameHolder.rsVideoActive {
+	opacity: 1;
+}
+.rsVideoContainer iframe, .rsVideoContainer video, .rsVideoContainer embed, .rsVideoContainer .rsVideoObj {
+	position: absolute;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	width: 100%;/*height: 100%;*/
+}
+/* ios controls over video bug, shifting video */
+.rsVideoContainer.rsIOSVideo iframe, .rsVideoContainer.rsIOSVideo video, .rsVideoContainer.rsIOSVideo embed {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right: 44px;
+}
+.rsABlock {
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 15;
+}
+img.rsImg {
+	max-width: none;
+}
+.grab-cursor {
+	cursor:url(grab.png) 8 8, move;
+}
+.grabbing-cursor {
+	cursor:url(grabbing.png) 8 8, move;
+}
+.rsNoDrag {
+	cursor: auto;
+}
+.rsLink {
+	left:0;
+	top:0;
+	position:absolute;
+	width:100%;
+	/*height:100%;*/
+	display:block;
+	z-index: 20;
+	background: url(blank.gif);
+}
+ @media screen and (min-width: 0px) and (max-width: 960px) {
+ .rsSlideTitle {
+ font-size: 18px;
+ padding: 10px 12px 12px;
+}
+ .rsFirstSlideTitle {
+ left: 8%;
+ top: 54px;
+}
+ .rsSecondSlideTitle {
+ left: 8%;
+ top: 99px;
+}
+ #homeSlider .rsThumb {
+ font-size: 12px;
+ width: 115px;
+ height: 58px;
+ cursor: pointer;
+}
+ #homeSlider .rsTmb {
+ margin-top: 12px;
+}
+}
+ @media screen and (min-width: 0px) and (max-width: 500px) {
+ .royalSlider {
+height: 700px !important;
+}
+ .rsSlideTitle {
+ font-size: 14px;
+ padding: 8px 10px 8px;
+}
+ .rsFirstSlideTitle {
+ left: 24px;
+ top: 24px;
+}
+ .rsSecondSlideTitle {
+ left: 24px;
+ top: 63px;
+}
+}
+.date_txt
+{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.date_list
+{
+	width:100px;
+	margin-right:10px;	
+	float:left;
+}
+
+ @media only screen and (max-device-width : 320px){
+
+.edit {
+	margin-top: -13px;
+}
+.rsOverflow{max-height:700px !important;}
+.royalSlider{max-height:776px !important; }
+}

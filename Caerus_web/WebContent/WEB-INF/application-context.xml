@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cassandra="http://www.springframework.org/schema/data/cassandra"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/cql http://www.springframework.org/schema/cql/spring-cql.xsd
+http://www.springframework.org/schema/data/cassandra http://www.springframework.org/schema/data/cassandra/spring-cassandra.xsd">
+	   					   
+<context:component-scan base-package="caerusapp.dao"/>
+
+<context:property-placeholder location="classpath:config.properties" />
+
+  <!-- REQUIRED: The Cassandra Cluster -->
+  <cassandra:cluster contact-points="${cassandra.contactpoints}" port="${cassandra.port}" />
+
+  <!-- REQUIRED: The Cassandra Session, built from the Cluster, and attaching 
+    to a keyspace -->
+  <cassandra:session keyspace-name="${cassandra.keyspace}" id="cassandraSession"/>
+
+  <!-- REQUIRED: The Default Cassandra Mapping Context used by CassandraConverter -->
+  <cassandra:mapping />
+
+  <!-- REQUIRED: The Default Cassandra Converter used by CassandraTemplate -->
+  <cassandra:converter />
+
+  <!-- REQUIRED: The Cassandra Template is the building block of all Spring 
+    Data Cassandra -->
+  <cassandra:template id="cassandraTemplate" />
+  
+  <!-- OPTIONAL: If you are using Spring Data Cassandra Repositories, add 
+    your base packages to scan here -->
+  <cassandra:repositories base-package="caerusapp.dao" />
+	
+	<!-- Master Service and DAO Mapping  -->
+		<bean id="masterService" class="caerusapp.service.common.MasterManager">
+			<property name="masterDao" ref="masterDao" />
+		</bean>
+		<bean id="masterDao" class="caerusapp.dao.common.MasterDao"/>
+	<!-- Master Service and DAO Mapping  -->
+	
+	
+	<!-- Login Service and DAO Mapping  -->
+		 <bean id="loginManagement" class="caerusapp.service.common.CaerusLoginManagement">
+			<property name="loginManagementDao" ref="loginManagementDao" />
+		</bean>
+		<bean id="loginManagementDao" class="caerusapp.dao.common.JdbcLoginManagementDao" /> 
+		
+		<bean id="loginService" class="caerusapp.service.LoginServiceManager">
+			<property name="loginDao" ref="loginDao" />
+		</bean>
+	
+		<bean id="loginDao" class="caerusapp.dao.JdbcLoginDao" />
+	
+	<!-- Login Service and DAO Mapping  -->
+	
+	
+	<!--  University Service and DAO Mapping  -->
+	
+	<bean id="universityManager" class="caerusapp.service.university.UniversityManager">
+		<property name="universityManagerDao" ref="universityManagerDao" />
+	</bean>
+	<bean id="universityManagerDao" class="caerusapp.dao.university.UniversityManagerDao" />
+	
+	
+	<bean id="universityJobsManager" class="caerusapp.service.university.UniversityJobsManager">
+		<property name="universityJobsDao" ref="universityJobsDao" />
+	</bean>
+	
+	<bean id="universityJobsDao" class="caerusapp.dao.university.UniversityJobsDao" />
+	
+	<!--  University Service and DAO Mapping  -->
+	
+	
+	
+	
+	<!--  Employer Service and DAO Mapping  -->
+	
+	<bean id="employerJobPostManager" class="caerusapp.service.employer.EmployerJobPostManager">
+		<property name="employerJobPostDao" ref="employerJobPostDao" />
+	</bean>
+	<bean id="employerJobPostDao" class="caerusapp.dao.employer.EmployerJobPostDao" />
+	
+	<bean id="employerEventManager" class="caerusapp.service.employer.EmployerEventManager">
+		<property name="employerEventDao" ref="employerEventDao" />
+	</bean>
+	<bean id="employerEventDao" class="caerusapp.dao.employer.EmployerEventDao" />
+	
+	<bean id="employerManager" class="caerusapp.service.employer.EmployerManager">
+		<property name="employerDao" ref="employerDao" />
+	</bean>
+	<bean id="employerDao" class="caerusapp.dao.employer.EmployerDao" />
+	
+	<bean id="employerQueryBuilderManager" class="caerusapp.service.employer.EmployerQueryBuilderManager">
+		<property name="employerQueryBuilderDao" ref="employerQueryBuilderDao" />
+	</bean>
+	<bean id="employerQueryBuilderDao" class="caerusapp.dao.employer.EmployerQueryBuilderDao"/>
+	
+	<!--  Employer Service and DAO Mapping  -->
+	
+	
+	<!-- Message Service and DAO Mapping  -->
+	<bean id="messageManager" class="caerusapp.service.common.MessageManager">
+		<property name="messageDao" ref="messageDao" />
+	</bean>
+	<bean id="messageDao" class="caerusapp.dao.common.MessageDao"/>
+		<!-- Message Service and DAO Mapping  -->
+	
+	
+	<!--  Student Service and DAO Mapping  -->
+		
+		<bean id="studentJobsManager" class="caerusapp.service.student.StudentJobsManager">
+			<property name="studentJobsDao" ref="studentJobsDao" />
+		</bean>
+		<bean id="studentJobsDao" class="caerusapp.dao.student.StudentJobsDao"/>
+		
+		<bean id="studentManager" class="caerusapp.service.student.StudentManager">
+			<property name="studentDao" ref="studentDao" />
+		</bean>
+		<bean id="studentDao" class="caerusapp.dao.student.StudentDao" />
+	
+	<!--  Student Service and DAO Mapping  -->
+	
+	<!-- Career Path Service and DAO Mapping  -->
+	
+		<bean id="careerPathTree" class="caerusapp.service.common.CareerPathTree">
+			<property name="careerPathDao" ref="careerPathDao" />
+		</bean>
+	
+		<bean id="careerPathDao" class="caerusapp.dao.common.JdbcCareerPathDao" />
+		
+		<!-- <bean id="cassandraExtensionsManager" class="caerusapp.service.common.CassandraExtensionsManager">
+			<property name="cassandraExtensionsDao" ref="cassandraExtensionsDao" />
+		</bean>
+	
+		<bean id="cassandraExtensionsDao" class="caerusapp.dao.common.CassandraExtensionsDao" /> -->
+	<!-- Career Path Service and DAO Mapping  -->
+	
+	
+	
+   <bean name="starter" init-method="loadProperties" class="caerusapp.util.CaerusPathConstants" />
+</beans>

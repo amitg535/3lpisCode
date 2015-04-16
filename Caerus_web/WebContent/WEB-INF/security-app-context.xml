@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+ 
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	<http pattern="/css/*" security="none" />
+	<http pattern="/fonts/*" security="none" />
+	<http pattern="/images/*" security="none" />
+	<http pattern="/js/*" security="none" />
+	<http pattern="/home.htm" security="none" />
+	<!-- <http pattern="/index.htm" security="none" /> -->
+	<http pattern="/login.htm" security="none" />
+	<http pattern="/candidate_login.htm" security="none" />
+	<http pattern="/candidate_registration.htm" security="none" />
+	<http pattern="/employer_registration.htm" security="none" />
+	<http pattern="/employer_plans_landing.htm" security="none" />
+	<http pattern="/email_account_verifier.htm" security="none" />
+	<http pattern="/user_forgot_password.htm" security="none" />
+	<http pattern="/university_registration.htm" security="none" />
+	<!-- <http pattern="/employer_registration_new.htm" security="none" /> -->
+	<http pattern="/employer_registration_preview.htm" security="none" />
+	<!-- <http pattern="/employer_registration_new1.htm" security="none" /> -->
+	<!-- <http pattern="/employer_register_new_savedata.htm" security="none" /> -->
+	<!-- <http pattern="/employer_registration_new_success.htm" security="none" /> -->
+	<http pattern="/employer_termsnconditions.htm" security="none" />
+	<http pattern="/set_password.htm" security="none" />
+	<http pattern="/virtual_jobfair_setup.htm" security="none" />
+	<!-- <http pattern="/candidate_advancesearch_dashboard.htm" security="none" />-->
+	<http pattern="/employer_view_candidate_profile_photo.htm" security="none" />
+	<http pattern="/candidate_detail_view_qrCode.htm" security="none"></http>
+	<http pattern="/candidate_view_profile_photoQR.htm" security="none"></http>
+	<http pattern="/candidate_search_jobs_internships.htm" security="none"></http>
+	<http pattern="/candidate_advancesearch.htm" security="none" />
+	<http pattern="/candidate_job_listing.htm" security="none" /> 
+	
+	<http pattern = "/preview_job.htm" security = "none" />
+	
+	<http  pattern="/admin_get_json_for_tree.htm" security = "none"  />
+
+<!-- 		<beans:bean id="customAuthenticationFailureHandler"  class="me.practice.validate.CustomAuthenticationFailureHandler" >
+    		<property name="defaultFailureUrl" value="/auth_error.jsp"/>
+		</beans:bean>  -->
+	
+		<http  auto-config="true" disable-url-rewriting="true">
+		<!-- 	<session-management session-fixation-protection="newSession">
+				<concurrency-control max-sessions="1" />
+			</session-management>
+		
+		 -->
+		 <intercept-url pattern="/employer*.htm" access="ROLE_CORPORATE" />
+		<intercept-url pattern="/virtual*.htm" access="ROLE_ADMIN" />
+		<intercept-url pattern="/welcome*.htm" access="ROLE_CORPORATE,ROLE_STUDENT,ROLE_UNIVERSITY,ROLE_ADMIN,ROLE_USER" />
+		
+		<intercept-url pattern="/university*.htm" access="ROLE_UNIVERSITY" />
+	 <intercept-url pattern="/candidate*.htm" access="ROLE_STUDENT" />
+		<intercept-url pattern="/studentView*" access="ROLE_USER" />
+		<intercept-url pattern="/admin*.htm" access="ROLE_ADMIN" />
+		<intercept-url pattern="/home*" access="ROLE_USER" />
+	  <intercept-url pattern="/employer_recentlyposted_jobs.htm" access="ROLE_CORPORATE" /> 
+	  <intercept-url pattern="/message_inbox.htm" access="ROLE_CORPORATE,ROLE_STUDENT" />
+	  
+	
+				 <form-login login-page="/home.htm" authentication-success-handler-ref="authSuccessHandler" default-target-url="/home.htm" always-use-default-target="true" authentication-failure-url="/home.htm?error=true" username-parameter="username" password-parameter="password" />
+			
+			
+				<logout delete-cookies="JSESSIONID"  invalidate-session="true" success-handler-ref="customLogoutHandler"/>
+				
+		    <remember-me />
+		    
+		    <session-management  session-fixation-protection="none"> <!-- session-authentication-strategy-ref="sas" -->        
+   			 <concurrency-control max-sessions="1" expired-url="/home.htm"/> 
+		</session-management>
+		
+		 
+		</http>
+	<!--  -->
+	
+		 <beans:bean id="customLogoutHandler" class="caerusapp.util.CustomLogoutHandler">
+	    	<beans:property name="loginManagement" ref="loginManagement" ></beans:property>
+   		 </beans:bean>  
+    
+    <beans:bean id="authSuccessHandler" class="caerusapp.util.AuthenticationSuccessHandler" >
+    	<beans:property name="alwaysUseDefaultTargetUrl" value="true"/>
+    </beans:bean>
+    
+	<beans:bean id="sas" class="org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy"/>
+		
+		
+	 <authentication-manager>
+		    <authentication-provider user-service-ref="loginService" >
+		   		 <password-encoder hash="md5" />
+		    </authentication-provider>
+  	</authentication-manager>
+</beans:beans>  

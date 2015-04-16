@@ -1,0 +1,363 @@
+/* ----------------------------------------------  Inputs, textareas and selects  ---------------------------------------------- */
+
+input[type="submit"], input[type="button"], input[type="file"]:after {
+	background:white url(../images/formelements/formelements-select.png) no-repeat center right;
+}
+.ie9 input[type="text"] {
+	line-height:normal;
+} /* Get the stuff to line up right */
+.bigtextareastyle1 {
+	color:#a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:1.5%;
+	width:96.5%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.bigtextareastyle2 {
+	color:#a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:10px;
+	width:97%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.bigtextareastyle3 {
+	color:#a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:10px;
+	width:97%;
+	height:50px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.smalltextboxstyle1 {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	width:43%;
+	padding:6px 10px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+.smalltextboxstyle2 {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	width:96%;
+	padding:6px 10px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+.smalltextboxstyle3 {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:6px 10px;
+	width:96.5%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	font-size:11px;
+}
+.smalltextboxstyle4 {
+	color: #a7a7a7;
+	border:#ccc solid 1px;
+	font-size:11px;
+	padding:12px 10px;
+	width:60%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+.smalltextboxstyle5 {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:6px 10px;
+	width:90%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+.smalltextboxstyle6 {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	font-size:11px;
+	padding:6px 10px;
+	width:100%;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+.smalltextboxstyle_datetime {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	padding:6px 10px;
+	width:23%;
+	margin-right:0.8em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius:3px;
+	font-size:11px;
+}
+.searchtextbox {
+	color:#828282;
+	background:#ffffff;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	border:#ececec solid 1px;
+	width:78%;
+	padding:0.6em 0.833em;
+	font-size:11px;
+}
+/* ----------------------------------------------  File field  ----------------------------------------------  */
+
+	/* Webkit Only */
+	
+	input[type="file"] {
+	position: relative;
+	width: 42%;
+	border: solid 1px #ececec;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	height:2.7em;
+	color: #a7a7a7;
+}
+.browsetxtbox {
+	position: relative;
+	width: 80% !important;
+	border: solid 1px #ececec;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	height:2.7em;
+	color: #a7a7a7;
+}
+.filestyle1 {
+	width:53% !important;
+}
+.filestyle2 {
+	width:46% !important;
+}
+ input[type=file]::-webkit-file-upload-button {
+ width: 0;
+padding: 0;
+margin: 0;
+-webkit-appearance: none;
+border: none;
+}
+input[type="file"]:after {
+	content: 'Browse';
+	display: inline-block;
+	left: 100%;
+	position: relative;
+	background:#589edd url(../images/formelements/formelements-select.png) no-repeat center left;
+	cursor:pointer;
+	color:#ffffff;
+	border:#589edd solid 2px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	padding:0.38em 0.667em;
+	font-size:1.167em;
+	text-align:center;
+	margin:0 0 0 1.667em;
+}
+input[type="file"]:active:after {
+	box-shadow:none;
+}
+/* ----------------------------------------------  Checkboxes and Radio inputs  ----------------------------------------------  */	
+	
+/*.checkbox_label_grid
+{
+	margin-top:-0.2em !important;
+}
+.radio_label {
+	color: #a7a7a7;
+	font-size:0.9em;
+}
+input[type="radio"], input[type="checkbox"] {
+	position: absolute;
+	left: -999em;
+}
+label:before {
+	display: inline-block;
+	position: relative;
+	top:0.20em;
+	left:-6px;
+	content:'';
+	width:25px;
+	height:24px;
+	background-image:url(../images/formelements/formelements.png);
+}
+input[type="checkbox"] + label:before {
+	background-position: 0 0px;
+}
+input[type="checkbox"]:checked + label:before {
+	background-position: 0 -25px;
+}
+input[type="radio"] + label:before {
+	background-position: -25px -25px;
+}
+input[type="radio"]:checked + label:before {
+	background-position: -25px 0;
+}
+	*/
+
+
+/* ---------------------------------------------- Form Submit and Next buttons ---------------------------------------------- */	
+
+input[type="submit"], input[type="button"] {
+	cursor:pointer;
+	color:#000;
+	border:#3882c5 solid 1px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding:0.8em 2em;
+	margin-right:0.5em;
+	overflow:visible;
+	font-size:12px;
+	text-align:center;
+	background:#8aecfd;
+	border:none;
+	/*border:1px solid #f37124 !important;
+	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 1px 0px 0px #535353;
+	box-shadow: 0px 1px 0px 0px #535353;*/
+	-ms-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border-bottom:1px solid #242424;
+}
+input[type="submit"]:active, input[type="button"]:active {
+}
+input[type="submit"]:hover, input[type="button"]:hover {
+	color:#000;
+	background:#8aecfd;
+}
+/* -----------------------------------*/
+
+/*-----------  Select menu  ---------------------------------------------- */
+	
+div.styled {
+	border:#ececec solid 1px;
+	-webkit-border-radius:7px;
+	border-radius:0px;
+	font-size:1em;
+}
+div.listwidthstyl1 {
+	width:46%;
+	line-height:30px;
+}
+div.listwidthstyl8 {
+	width:100%;
+	line-height:30px;
+}
+div.listwidthstyl3 {
+	line-height:30px;
+}
+div.listwidthstyl2 {
+	width:100%;
+	line-height:30px;
+}
+div.listwidthstyl4 {
+	width:15%;
+	line-height:30px;
+}
+div.listwidthstyl5 {
+	line-height:25px !important;
+}
+div.listwidthstyl6 {
+	width:15%;
+	line-height:28px;
+}
+div.listwidthstyl7 {
+	width:18%;
+	line-height:30px;
+}
+div.styled {
+	background:#ffffff url(../images/formelements/formelements-select.png) no-repeat center right;
+}
+/* For IE and Firefox */
+div.styled {
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+.ie7 div.styled {
+	border:none;
+}
+div.listwidthstyl1 select {
+	width:108% !important;
+}
+div.listwidthstyl4 select, div.listwidthstyl7 select {
+	width:120% !important;
+}
+div.listwidthstyl5 select {
+	width:113% !important;
+}
+div.listwidthstyl6 select {
+	width:96% !important;
+}
+div.styled select {
+	width:107%;
+	width:107%\9;
+ .width:100%;
+	background-color:transparent;
+	background-image:none;
+	-webkit-appearance: none;
+	border:none;
+	box-shadow:none;
+	/*padding:0.4em 0 0 0.4em;*/
+	color: #a7a7a7;/*	height:2.5em;
+	height:2.5em\9;*/
+}
+.ie7 div.styled select {
+	width:100%;
+	background-color:#fff;
+	border: solid 1px #ccc;
+	padding:0.3em 0.5em;
+	height:2.5em\9;
+}
+/* Remove the custom styling for IE 7-8 */
+		
+.ie8 label:before {
+	display:none;
+	content:none;
+}
+.ie8 input[type="checkbox"], .ie8 input[type="radio"], .ie7 input[type="checkbox"], .ie7 input[type="radio"] {
+	position: static;
+	left:0;
+}
+.ie8 input[type="checkbox"], .ie8 input[type="radio"] {
+	position:relative;
+	top:5px;
+	margin-right:0.5em;
+}
+input[type="text"]:focus, textarea:focus {
+	border-color:#000;
+}
+.txteditor_width {
+	width:98%;
+}
+.txtboxwidth1 {
+	width:67% !important;
+	padding:2% !important;
+}
+/********** Snehal ***************/
+
+.smalltextboxstyle_noofyears {
+	color: #a7a7a7;
+	border:#ececec solid 1px;
+	padding:6px 10px;
+	width:40%;
+	margin-right:0.80em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius:3px;
+	font-size:11px;
+	float:left;
+}
+/********** Snehal ***************/

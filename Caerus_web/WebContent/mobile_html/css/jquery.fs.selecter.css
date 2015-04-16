@@ -1,0 +1,106 @@
+/*
+ * Selecter Plugin [Formstone Library]
+ * @author Ben Plum
+ * @version 2.1.2
+ *
+ * Copyright © 2013 Ben Plum <mr@benplum.com>
+ * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
+ */
+.selecter-element {
+ *left: -999999px;
+	position: absolute;
+	opacity: 0;
+}
+.selecter {
+	display: block;
+	margin: 10px 0;
+	position: relative;
+	z-index: 1;
+	background:#ffffff;
+}
+.selecter .selecter-selected {
+	background:url(../images/fs-selecter-arrow.png) no-repeat right center;
+	border: 1px solid #b2b2b2;
+	border-radius:3px;
+	color:#606060;
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding:13px 10px;
+	position: relative;
+	text-overflow: clip;
+	z-index: 49;
+}
+.selecter .selecter-options {
+	border: 1px solid #b2b2b2;
+	color:#606060;
+	display: none;
+	left: 0;
+	margin: 0;
+	max-height:260px;
+	overflow:auto;
+	overflow-x: hidden;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+ *width: auto;
+	z-index: 50;
+	-webkit-border-radius: 0px 0px 3px 3px;
+	border-radius: 0px 0px 3px 3px;
+	border-top:0;
+}
+.selecter .selecter-item {
+	background: #fff;
+	border-bottom: 1px solid #e3e3e3;
+	color: #666;
+	cursor: pointer;
+	display: block;
+	font-size: 13px;
+	margin: 0;
+	overflow: hidden;
+	padding: 8px 10px;
+	text-overflow: ellipsis;
+	width: 100%;
+}
+.selecter .selecter-item.selected {
+	background: #F9F9F9;
+}
+.selecter .selecter-item.first {
+	border-radius: 0;
+}
+.selecter .selecter-item.last {
+	border-radius: 0 0 2px 2px;
+	border-bottom: 0;
+}
+/* Open */
+	.selecter.open {
+	z-index: 3;
+}
+.selecter.open .selecter-selected {
+	border-radius: 3px 3px 0 0;
+	z-index: 51;
+}
+.selecter.open .selecter-selected, .selecter.focus .selecter-selected {
+	background-color: #fff;
+}
+/* 'Disabled' State */
+	.selecter.disabled .selecter-selected {
+	background: #fff;
+	border-color: #eee;
+	color: #ccc;
+	cursor: default;
+}
+.selecter.disabled .selecter-options {
+	background: #fff;
+	border-color: #eee;
+}
+.selecter.disabled .selecter-group, .selecter.disabled .selecter-item {
+	border-color: #eee;
+	color: #ccc;
+	cursor: default;
+}
+.selecter.disabled .selecter-item.selected {
+	background: #fafafa;
+}

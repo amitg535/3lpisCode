@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xmlns:task="http://www.springframework.org/schema/task"
+   xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.springframework.org/schema/mvc        
+   http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+   http://www.springframework.org/schema/task
+   http://www.springframework.org/schema/task/spring-task.xsd">
+
+   <context:component-scan base-package="caerusapp.*" />
+  
+
+	<bean id="candidatePortfolioDetailsValidator" class="caerusapp.service.student.CandidatePortfolioValidator" />
+
+	<bean id="queryBuilderValidator" class="caerusapp.service.employer.EmployerQueryBuilderValidator" />
+
+	<bean id="employerScheduleEventValidator" class="caerusapp.service.employer.EmployerScheduleEventValidator" />
+	
+	<bean id="employerJobValidator" class="caerusapp.service.employer.EmployerJobValidator" />
+	<bean id="employerCampusJobValidator" class="caerusapp.service.employer.EmployerCampusJobValidator" />
+	<bean id="employerInternshipValidator" class="caerusapp.service.employer.EmployerInternshipValidator" />
+	<bean id="employerCampusInternshipValidator" class="caerusapp.service.employer.EmployerCampusInternshipValidator" />
+	
+	<bean id="employerProfileValidator" class="caerusapp.service.employer.EmployerProfileValidator" />
+	
+	<bean id="universityInternalPostingValidator" class="caerusapp.service.university.UniversityInternalPostingValidator" />
+
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/jsp/" />
+      <property name="suffix" value=".jsp" />
+   </bean>
+   
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+   	      <!-- max upload size in bytes -->
+   	   <property name="maxUploadSize" value="26214400" /> <!-- 25MB -->
+        
+        <!-- max size of file in memory (in bytes) -->
+        <property name="maxInMemorySize" value="26214400" /> <!-- 25MB -->
+   </bean>
+   
+   
+	<mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean
+				class="org.springframework.mobile.device.site.SitePreferenceWebArgumentResolver" />
+			<bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
+		</mvc:argument-resolvers>
+
+	</mvc:annotation-driven>
+   
+   <mvc:interceptors>
+		<!-- Resolve the device which has generated the request -->
+		<bean
+			class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+		<!-- User's site preference -->
+		<bean
+			class="org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor" />
+		<!-- Redirects users to the device specific site -->
+		<bean
+			class="org.springframework.mobile.device.switcher.SiteSwitcherHandlerInterceptor"
+			factory-method="urlPath">
+			<constructor-arg value="/m" />
+			<constructor-arg value="/t" />
+			<constructor-arg value="/" />
+		</bean>
+	</mvc:interceptors>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean id="liteDeviceDelegatingViewResolver"
+					class="org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver">
+					<constructor-arg>
+						<bean id="viewResolver"
+							class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+							<property name="prefix" value="/WEB-INF/jsp/" />
+							<property name="suffix" value=".jsp" />
+						</bean>
+					</constructor-arg>
+					<property name="mobilePrefix" value="m/" />
+					<property name="tabletPrefix" value="t/" />
+					<property name="enableFallback" value="true" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+ <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+<property name="warnLogCategory" value="ERROR"/>
+	  <property name="exceptionMappings">
+		<props>
+			<prop key="java.lang.Exception">
+			error/error
+			</prop>
+		</props>
+	  </property>
+	</bean> 
+
+
+
+	<task:annotation-driven  executor="taskExecutor"  />
+    
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="5"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="waitForTasksToCompleteOnShutdown" value="true"/>
+    </bean>
+    
+    <!-- <bean class="caerusapp.web.employer.EmployerCampusConnectController" name="spring4Tasks" >
+    	<constructor-arg ref="taskExecutor" />
+    </bean> -->
+
+</beans>

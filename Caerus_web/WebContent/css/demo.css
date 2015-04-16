@@ -1,0 +1,56 @@
+
+
+.ui-accordion{
+	border:none;	
+}
+#list3 li .title img{
+	display:inline-block;	
+}
+
+#list3 {  width:99.8%; margin:0; padding:0; }
+#list3 li .title, #list3 li.selected .title { font-weight: normal; font-size:22px; color:#000000; }
+#list3 .contentlist  {
+
+	padding: 15px;
+}
+#list3 li, #list3 li.selected{
+		border-top:1px solid #ffffff;
+	border-bottom:1px solid #aba9a9;
+}
+
+#list3 li div.title {																																																																																																																										
+																																																																																																																																																																																																																																																																background: #E0E0E0 url(../images/expand.png) no-repeat right 22px;
+	/*background:#F5F5F5  url(../images/expand.png) no-repeat right 22px;*/
+		padding: 9px 15px;
+	cursor: pointer;
+		height: 85px; 
+}
+#list3 li.selected div.title {
+	background:#F5F5F5  url(../images/collapse.png) no-repeat right 22px;
+	
+}
+#list3 li{
+	  padding: 10px;
+  background: #fff;
+  box-shadow: #d9d9d9 1px 2px 2px;
+  margin-bottom: 1.6em;
+}
+#list3 li .contentlist {
+	background:#fff ;
+	/*padding:20px 20px;*/
+	
+}
+
+#list3{
+	background:none !important;
+}
+.textAlignRight{text-align:right;}
+
+#list3 li div.newmessage{background:#F9F2AC  url(../images/expand.png) no-repeat right 22px;}
+   .listlittle{color:#0B99B3; padding-left:76px; display:block;}
+   .emails{display: block;
+padding-right: 177px;}
+   .description {padding-left: 76px;
+display: block;
+padding-right: 177px;}
+.contentlist .checker{float:left !important;}

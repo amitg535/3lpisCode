@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>caerusapp</groupId>
+  <artifactId>Caerus</artifactId>
+   <version>1.0</version>  
+  <packaging>ear</packaging>
+  <name>Caerus</name>
+  <url>http://maven.apache.org</url>
+  
+  
+  <dependencies>
+  	
+
+
+	  
+	<dependency>
+      <groupId>caerusapp</groupId>
+      <artifactId>Caerus_api</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+	   <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>caerusapp</groupId>
+      <artifactId>Caerus_web</artifactId>
+      <version>1.0</version>
+      <type>war</type>
+      <scope>provided</scope>
+    </dependency>
+<!--  	<dependency>
+      <groupId>caerusapp</groupId>
+      <artifactId>VirtualJobFair_war</artifactId>
+      <version>1.0</version>
+      <type>war</type>
+      <scope>provided</scope>
+    </dependency> -->
+</dependencies>
+<repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://repo.maven.apache.org/maven2</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <build>
+    
+    <finalName>Caerus</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.3</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.2-beta-5</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>default-ear</id>
+            <phase>package</phase>
+            <goals>
+              <goal>generate-application-xml</goal>
+              <goal>ear</goal>
+            </goals>
+            <configuration>
+                 <version>5</version>
+			     <unpack>true</unpack>
+				 <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+				 <!--  <applicationXml>EarContent/META-INF/application.xml</applicationXml> 
+				  <earSourceIncludes>META-INF/**</earSourceIncludes> -->
+				 <skinnyWars>true</skinnyWars>
+              <modules>
+                <jarModule>
+                  <groupId>caerusapp</groupId>
+                  <artifactId>Caerus_api</artifactId>
+                </jarModule>
+               <webModule>
+                  <groupId>caerusapp</groupId>
+                  <artifactId>Caerus_web</artifactId>
+                  <context-root>/</context-root>
+				<!--    <unpack>true</unpack>  -->
+                </webModule>
+			<!--  	<webModule>
+                  <groupId>caerusapp</groupId>
+                  <artifactId>VirtualJobFair_war</artifactId>
+                  <context-root>/VJF</context-root>
+				   <unpack>true</unpack>
+                </webModule> -->
+              </modules>
+            </configuration>
+          </execution>
+      </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.4.1</version>
+        <executions>
+          <execution>
+            <id>default-clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.3.1</version>
+        <executions>
+          <execution>
+            <id>default-install</id>
+            <phase>install</phase>
+            <goals>
+              <goal>install</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <id>default-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
+        <executions>
+          <execution>
+            <id>default-deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+     </plugins>
+  </build>
+
+</project>
